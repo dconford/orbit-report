@@ -33,10 +33,10 @@ export class AppComponent {
        response.json().then(function(data) {
  
           let fetchedSatellites = data.satellites;
-          console.log("peeking at fetchedSatellites.name and .launchDate ", fetchedSatellites[1].name, fetchedSatellites[1].launchDate);
+          //console.log("peeking at fetchedSatellites.name and .launchDate ", fetchedSatellites[1].name, fetchedSatellites[1].launchDate);
           for (let i = 0; i < fetchedSatellites.length; i++) {
             let satellite: object =new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
-            console.log("peeking at Satellite Data " ,satellite );
+            //console.log("peeking at Satellite Data " ,satellite );
             this.sourceList.push(satellite);
           }
 
@@ -45,46 +45,18 @@ export class AppComponent {
     }.bind(this));        
   }
 
-  // Add event listener to table
-// var el = document.getElementById("outside");
-// el.addEventListener("click", modifyText, false);
-
-
-
   search(searchTerm: string): void {
     console.log("searchTerm is ", searchTerm);
     let matchingSatellites: Satellite[] = [];
     this.searchTerm = this.searchTerm.toLowerCase();
     for(let i=0; i < this.sourceList.length; i++) {
-       let name = this.sourceList[i].name.toLowerCase();
-       if (name.indexOf(searchTerm) >= 0) {
-          matchingSatellites.push(this.sourceList[i]);
-       }
+      let name = this.sourceList[i].name.toLowerCase();
+      if (name.indexOf(searchTerm) >= 0) {
+        matchingSatellites.push(this.sourceList[i]);
+      }
     }
     // assign this.displayList to be the the array of matching satellites
     // this will cause Angular to re-make the table, but now only containing matches
     this.displayList = matchingSatellites;
- }
+  }
 }
-
-
-  // form.addEventListener('submit',function() {
-  //   //let searchTerm = document.getElementById("searchField");
-  //   let searchTerm = document.querySelector("input[name=query")
-  //   //let searchButton = document.getElementById("searchButton")
-
-  //    //search(searchTerm: string): void {
-  //     console.log("hit search function");
-  //     let matchingSatellites: Satellite[] = [];
-  //     searchTerm = searchTerm.toLowerCase();
-  //     for(let i=0; i < this.sourceList.length; i++) {
-  //         let name = this.sourceList[i].name.toLowerCase();
-  //         if (name.indexOf(searchTerm) >= 0) {
-  //           matchingSatellites.push(this.sourceList[i]);
-  //         }
-  //     }
-  //   // assign this.displayList to be the the array of matching satellites
-  //   // this will cause Angular to re-make the table, but now only containing matches
-  //   this.displayList = matchingSatellites;
-    
-  // }

@@ -1,18 +1,7 @@
 <app-orbit-list [satellites]="displayList"></app-orbit-list>
 <div class="search-form">
-
-  <!-- <input #mission (keyup.enter)="updateMission(mission.value)" value="{{ missionName }}"/>
-  <button (click)="updateMission(mission.value)">save</button> -->
-  
-
-  <!-- <label>Search: <input (keyup.enter)="search(name.value)" type="text" [(ngModel)]="searchTerm" id="searchField" /></label> -->
-  <label>Search: <input (keyup.enter)="search(searchTerm.value)" type="text" searchTerm="name" id="searchField" /></label>
+  <label>Search: <input #searchTerm (keyup.enter)="search(searchTerm.value)" type="text" searchTerm="name" id="searchField" /></label>
   <button name="query2" id="searchButton" (click)="search(searchTerm.value)">Search</button>
-
-  <p>
-      Enter your Name : <input type='text' [(ngModel)]='name' />
-      You have entered {{name}}
-  </p>
 </div>  
 
 
