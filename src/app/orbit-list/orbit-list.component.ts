@@ -30,8 +30,4 @@ export class OrbitListComponent implements OnInit {
        return 0;
     });
  }
- 
-  //warning: boolean = shouldShowWarning(): boolean;
 }
-
-//let warning: boolean = shouldShowWarning();
