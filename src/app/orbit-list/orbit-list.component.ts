@@ -27,4 +27,15 @@ export class OrbitListComponent implements OnInit {
        return 0;
    });
   }
+
+  isLineColored(): boolean {
+     let lastCall: string = 'blue';
+     if(lastCall === 'blue') {
+        lastCall = 'white';
+        return false;
+     } else {
+        lastCall = 'blue';
+        return true;
+     }
+   }
 }

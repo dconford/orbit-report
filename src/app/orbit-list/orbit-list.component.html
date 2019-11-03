@@ -8,12 +8,15 @@
       <th>Launch Date</th>
    </tr>
    <tr *ngFor="let satellite of satellites">
+
+    <!-- use span and ngIf to replace style tag on span color/no color -->
         <td>{{satellite.name}}</td>
         <td [class.warning]="satellite.shouldShowWarning()">{{satellite.type}}</td>
         <td>{{satellite.operational}}</td>
         <td>{{satellite.orbitType}}</td>
         <td>{{satellite.launchDate}}</td>
-    </tr>
+        
+    </tr> 
 </table>
 
 <tr *ngFor="let policy of policies">

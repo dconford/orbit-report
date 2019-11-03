@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'orbit-report';
   displayList: Satellite[];
   sourceList: Satellite[];
-  searchTerm: string='ISS';
+  searchTerm: string='';
   name: string='';
   // constructor() {
   //   this.sourceList = [
@@ -39,7 +39,6 @@ export class AppComponent {
             //console.log("peeking at Satellite Data " ,satellite );
             this.sourceList.push(satellite);
           }
-
           this.displayList = this.sourceList.slice(0);
        }.bind(this));
     }.bind(this));        
