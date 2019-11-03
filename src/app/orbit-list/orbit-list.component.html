@@ -9,7 +9,6 @@
    </tr>
    <tr *ngFor="let satellite of satellites">
 
-    <!-- use span and ngIf to replace style tag on span color/no color -->
         <td>{{satellite.name}}</td>
         <td [class.warning]="satellite.shouldShowWarning()">{{satellite.type}}</td>
         <td>{{satellite.operational}}</td>
